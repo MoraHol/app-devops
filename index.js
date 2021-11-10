@@ -7,6 +7,7 @@ const cors = require('cors');
 // import routes
 const dashboadRoutes = require('./routes/dashboard');
 const verifyToken = require('./routes/validate-token');
+const publicRoutes = require('./routes/public-routes')
 
 const app = express();
 
@@ -47,6 +48,8 @@ const authRoutes = require('./routes/auth');
 
 // route middlewares
 app.use('/api/user', authRoutes);
+
+app.use('/api', publicRoutes);
 
 
 // route middlewares
